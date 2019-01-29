@@ -11,6 +11,6 @@ Product.destroy_all
     name: "producto #{i}",
     price: rand(500..1500),
     description: "descripción para el producto #{i}",
-    image: "https://loremflickr.com/320/240"
+    image: "https://loremflickr.com/300/200"
   )
 end

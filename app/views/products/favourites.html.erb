@@ -1,0 +1,21 @@
+<h1>Lista de favoritos</h1>
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Imágen</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% @favourites.each do |f| %>
+      <tr>
+        <td><%= f.name %></td>
+        <td><%= image_tag f.image %></td>
+      </tr>
+    <% end %>
+    
+    <tr></tr>
+  </tbody>
+</table>

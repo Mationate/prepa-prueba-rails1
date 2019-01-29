@@ -1,4 +1,10 @@
 <h1>INDEX</h1>
+<% if notice.present? %>
+  <%= notice %>
+<% end %>
+<% if alert.present? %>
+  <%= alert %>
+<% end %>
 
 <table class="table table-hover">
   <thead class="thead-dark">
@@ -9,15 +15,17 @@
       <th>Image</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |p| %>
       <tr>
-        <th><%= p.name %></th>
+        <th><%= link_to p.name, product_path(p) %></th>
         <td><%= p.price %></td>
         <td><%= p.description %></td>
-        <td><%= image_tag p.image %></td>
+        <td><%= image_tag p.image, class:"thumbnail" %></td>
+        <td><%= link_to "Agregar a favoritos", favourite_path(p), method: :patch, class:"btn btn-info" %> </td>
         <td>
           <%= link_to 'Edit', edit_product_path(p), class:"btn btn-success" %>
         </td>
