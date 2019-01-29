@@ -1,0 +1,16 @@
+<% if notice.present? %>
+  <%= notice %>
+<% end %>
+<% if alert.present? %>
+  <%= alert %>
+<% end %>
+
+<h2>Nombre: </h2>
+<%= @product.name %>
+<br>
+<h2>Precio: </h2>
+<%= @product.price %>
+<h2>Descripción: </h2>
+<%= @product.description %>
+<h2>Imágen: </h2>
+<%= image_tag @product.image %>
